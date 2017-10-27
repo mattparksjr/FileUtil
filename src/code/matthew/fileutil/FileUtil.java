@@ -2,6 +2,7 @@ package code.matthew.fileutil;
 
 import java.util.HashMap;
 
+import code.matthew.fileutil.command.CheckReadWrite;
 import code.matthew.fileutil.command.GetFileSize;
 import code.matthew.fileutil.command.ICommand;
 import code.matthew.fileutil.command.IsValidDir;
@@ -16,6 +17,7 @@ public class FileUtil {
 	public static ICommand listContentsBy;
 	public static ICommand isValidDir;
 	public static ICommand getFileSize;
+	public static ICommand checkReadWrite;
 	
 	public static void main(String[] args) {
 
@@ -24,11 +26,12 @@ public class FileUtil {
 		listContentsBy = new ListContentsByExt();
 		isValidDir = new IsValidDir();
 		getFileSize = new GetFileSize();
+		checkReadWrite = new CheckReadWrite();
 		
 		// Register commands
 		possibleCommands.put(readDir.getCommand(), readDir);
 		possibleCommands.put(listContentsBy.getCommand(), listContentsBy);
-		// possibleCommands.add("-checkReadWrite");
+		possibleCommands.put(checkReadWrite.getCommand(), checkReadWrite);
 		possibleCommands.put(isValidDir.getCommand(), isValidDir);
 		// possibleCommands.add("-compareLex");
 		// possibleCommands.add("-lastModificationTime");
@@ -72,7 +75,7 @@ public class FileUtil {
 		System.out.println(" ");
 		System.out.println("    -listDirContents [dictonary]");
 		System.out.println("    -listContentsByExtension [dictonary] [extension]");
-		System.out.println("    -checkReadWrite [dictonatry/file] [dictonarypath/filepath]");
+		System.out.println("    -checkReadWrite [dictonatry/file]");
 		System.out.println("    -isValidDictonary [dictonary]");
 		System.out.println("    -compareLex [file] [file]");
 		System.out.println("    -lastModificationTime [file]");
