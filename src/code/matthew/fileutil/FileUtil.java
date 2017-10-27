@@ -2,6 +2,7 @@ package code.matthew.fileutil;
 
 import java.util.HashMap;
 
+import code.matthew.fileutil.command.GetFileSize;
 import code.matthew.fileutil.command.IsValidDir;
 import code.matthew.fileutil.command.ListContentsByExt;
 import code.matthew.fileutil.command.ReadDictonary;
@@ -13,6 +14,7 @@ public class FileUtil {
 	public static ICommand readDir;
 	public static ICommand listContentsBy;
 	public static ICommand isValidDir;
+	public static ICommand getFileSize;
 	
 	public static void main(String[] args) {
 
@@ -20,6 +22,7 @@ public class FileUtil {
 		readDir = new ReadDictonary();
 		listContentsBy = new ListContentsByExt();
 		isValidDir = new IsValidDir();
+		getFileSize = new GetFileSize();
 		
 		// Register commands
 		possibleCommands.put(readDir.getCommand(), readDir);
@@ -29,7 +32,7 @@ public class FileUtil {
 		// possibleCommands.add("-compareLex");
 		// possibleCommands.add("-lastModificationTime");
 		// possibleCommands.add("-listFileContents");
-		// possibleCommands.add("-getFileSize");
+		possibleCommands.put(getFileSize.getCommand(), getFileSize);
 		// possibleCommands.add("-contentsToByteArray");
 		// possibleCommands.add("-locateLongestWord");
 		// possibleCommands.add("-readLines");

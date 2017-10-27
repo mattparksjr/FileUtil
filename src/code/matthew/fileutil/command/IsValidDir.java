@@ -23,6 +23,9 @@ public class IsValidDir implements ICommand {
 				System.out.println(args[0] + " is not a valid dictonary!");
 				System.exit(0);
 			}
+		} else {
+			System.out.println("Error: Invalid usage. Please use -isValidDictonary [dictonary]");
+			System.exit(0);
 		}
 	}
 
