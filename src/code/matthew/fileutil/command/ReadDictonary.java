@@ -2,8 +2,6 @@ package code.matthew.fileutil.command;
 
 import java.io.File;
 
-import code.matthew.fileutil.ICommand;
-
 public class ReadDictonary implements ICommand {
 
 	@Override

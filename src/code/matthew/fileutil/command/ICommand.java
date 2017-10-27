@@ -1,4 +1,4 @@
-package code.matthew.fileutil;
+package code.matthew.fileutil.command;
 
 public interface ICommand {
 

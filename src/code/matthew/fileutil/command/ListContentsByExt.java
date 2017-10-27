@@ -3,8 +3,6 @@ package code.matthew.fileutil.command;
 import java.io.File;
 import java.util.ArrayList;
 
-import code.matthew.fileutil.ICommand;
-
 public class ListContentsByExt implements ICommand {
 
 	@Override

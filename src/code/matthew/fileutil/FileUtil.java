@@ -3,6 +3,7 @@ package code.matthew.fileutil;
 import java.util.HashMap;
 
 import code.matthew.fileutil.command.GetFileSize;
+import code.matthew.fileutil.command.ICommand;
 import code.matthew.fileutil.command.IsValidDir;
 import code.matthew.fileutil.command.ListContentsByExt;
 import code.matthew.fileutil.command.ReadDictonary;
