@@ -1,6 +1,6 @@
-package code.matthew.fileutil;
+package codes.matthewp.fileutil;
 
-import code.matthew.fileutil.command.*;
+import codes.matthewp.fileutil.command.*;
 
 import java.util.HashMap;
 import java.util.Map;

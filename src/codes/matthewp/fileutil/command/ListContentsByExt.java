@@ -1,4 +1,4 @@
-package code.matthew.fileutil.command;
+package codes.matthewp.fileutil.command;
 
 import java.io.File;
 import java.util.ArrayList;
