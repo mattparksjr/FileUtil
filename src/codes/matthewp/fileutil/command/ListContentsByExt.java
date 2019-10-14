@@ -1,7 +1,6 @@
 package codes.matthewp.fileutil.command;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class ListContentsByExt implements ICommand {
 
@@ -19,31 +18,27 @@ public class ListContentsByExt implements ICommand {
 	public void processCommand(String[] args) {
 		if (args.length > 0 && args[0] != null && args[1] != null) {
 			File f = new File(args[0]);
-
 			if (!f.exists()) {
-				System.out.println("Error: " + args[0] + " does not exist");
+				System.out.println("Error: file " + args[0] + " does not exist");
 				System.exit(0);
 			}
 
-			String realExt = "tmp";
-
-			if (args[1].startsWith(".")) {
-				realExt = args[1];
-			} else {
-				realExt = "." + args[1];
+			String realExt = args[1];
+			if (!realExt.startsWith(".")) {
+				realExt = "." + realExt;
 			}
 
 			File[] files = f.listFiles();
-			ArrayList<File> filesWithExt = new ArrayList<>();
-
-			for (int i = 0; i < files.length; i++) {
-				if (files[i].getName().endsWith(realExt)) {
-					filesWithExt.add(files[i]);
-				}
+			if (files == null) {
+				System.out.println("Error: This dictionary is empty!");
+				System.exit(0);
 			}
 
-			for (int j = 0; j < filesWithExt.size(); j++) {
-				System.out.println(filesWithExt.get(j).getName());
+			System.out.println("Listing files with extension " + realExt + " : ");
+			for (File file : files) {
+				if (file.getName().endsWith(realExt)) {
+					System.out.println(file.getName());
+				}
 			}
 			System.exit(0);
 		} else {

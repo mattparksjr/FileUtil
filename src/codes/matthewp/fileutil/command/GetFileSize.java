@@ -17,14 +17,11 @@ public class GetFileSize implements ICommand {
 	@Override
 	public void processCommand(String[] args) {
 		if (args[0] != null) {
-
 			File f = new File(args[0]);
-
 			if (!f.exists()) {
 				System.out.println("Error: That file does not exist");
 				System.exit(0);
 			}
-
 			System.out.println("Showing sizes for: " + args[0]);
 			
 			double bytes = f.length();
