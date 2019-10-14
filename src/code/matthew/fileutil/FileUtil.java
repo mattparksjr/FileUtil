@@ -1,22 +1,18 @@
 package code.matthew.fileutil;
 
-import java.util.HashMap;
-import java.util.Scanner;
+import code.matthew.fileutil.command.*;
 
-import code.matthew.fileutil.command.CheckReadWrite;
-import code.matthew.fileutil.command.GetFileSize;
-import code.matthew.fileutil.command.ICommand;
-import code.matthew.fileutil.command.IsValidDir;
-import code.matthew.fileutil.command.ListContentsByExt;
-import code.matthew.fileutil.command.ReadDictonary;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class FileUtil {
 
-    private static HashMap<String, ICommand> possibleCommands = new HashMap<String, ICommand>();
+    private static Map<String, ICommand> possibleCommands = new HashMap<String, ICommand>();
 
     public static void main(String[] args) {
         // Register commands
-        possibleCommands.put(new ReadDictonary().getCommand(), new ReadDictonary());
+        possibleCommands.put(new ReadDictionary().getCommand(), new ReadDictionary());
         possibleCommands.put(new ListContentsByExt().getCommand(), new ListContentsByExt());
         possibleCommands.put(new CheckReadWrite().getCommand(), new CheckReadWrite());
         possibleCommands.put(new IsValidDir().getCommand(), new IsValidDir());
@@ -65,7 +61,7 @@ public class FileUtil {
 		}
 //        System.out.println("    -compareLex [file] [file]");
 //        System.out.println("    -lastModificationTime [file]");
-//        System.out.println("    -listFileContents [dictonary]");
+//        System.out.println("    -listFileContents [dictionary]");
 //        System.out.println("    -contentsToByteArray [file]");
 //        System.out.println("    -locateLongestWord [file]");
 //        System.out.println("    -readLines [file]");

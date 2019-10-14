@@ -12,7 +12,7 @@ public class ListContentsByExt implements ICommand {
 
 	@Override
 	public String getUsage() {
-		return "-listContentsByExtension [dictonary] [extension]";
+		return "-listContentsByExtension [dictionary] [extension]";
 	}
 
 	@Override
@@ -33,19 +33,7 @@ public class ListContentsByExt implements ICommand {
 				realExt = "." + args[1];
 			}
 
-			/*
-			 * A note to any one reading this... These random comments are me attepmting to
-			 * debug it.. I felt cringy for having to do this so I left it as a memory! Good
-			 * days!
-			 */
-
 			File[] files = f.listFiles();
-
-			// 0 me.exe
-			// 1 something.bmp
-			// 2 lol.png
-			// 3 lawl.png
-
 			ArrayList<File> filesWithExt = new ArrayList<>();
 
 			for (int i = 0; i < files.length; i++) {
@@ -54,15 +42,12 @@ public class ListContentsByExt implements ICommand {
 				}
 			}
 
-			// 0 = null
-			// 1 = file
-			// 2 = null
 			for (int j = 0; j < filesWithExt.size(); j++) {
 				System.out.println(filesWithExt.get(j).getName());
 			}
 			System.exit(0);
 		} else {
-			System.out.println("Invalid usage. Please use: -listContentsByExtension [dictonary] [fileextension]");
+			System.out.println("Invalid usage. Please use: -listContentsByExtension [dictionary] [fileextension]");
 			System.exit(0);
 		}
 	}

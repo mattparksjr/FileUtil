@@ -21,7 +21,7 @@ public class CheckReadWrite implements ICommand {
 			File f = new File(args[0]);
 			
 			if(!f.exists()) {
-				System.out.println("Error: the provided dictonary/file does not exist..");
+                System.out.println("Error: the provided dictionary/file does not exist..");
 				System.exit(0);
 			}
 			
@@ -30,7 +30,7 @@ public class CheckReadWrite implements ICommand {
 			System.out.println("Read: " + f.canRead());
 			System.exit(0);
 		} else {
-			System.out.println("Error: Invalid command usage. Please use: -checkReadWrite [dictonatry/file]");
+            System.out.println("Error: Invalid command usage. Please use: -checkReadWrite [dictionary/file]");
 			System.exit(0);
 		}
 	}

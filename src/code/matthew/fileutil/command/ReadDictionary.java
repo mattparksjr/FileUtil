@@ -2,7 +2,7 @@ package code.matthew.fileutil.command;
 
 import java.io.File;
 
-public class ReadDictonary implements ICommand {
+public class ReadDictionary implements ICommand {
 
 	@Override
 	public String getCommand() {
@@ -11,20 +11,20 @@ public class ReadDictonary implements ICommand {
 
 	@Override
 	public String getUsage() {
-		return "-listDirContents [dictonary]";
+		return "-listDirContents [dictionary]";
 	}
 
 	@Override
 	public void processCommand(String[] args) {
 		if (args.length > 0 && args[0] != null) {
-			File dictonary = new File(args[0]);
+			File dictionary = new File(args[0]);
 
-			if (!dictonary.exists()) {
-				System.out.println("Error, the dictonary provided does not exist... Please enter a valid dictonary.");
+			if (!dictionary.exists()) {
+				System.out.println("Error, the dictionary provided does not exist... Please enter a valid dictionary.");
 				System.exit(0);
 			}
 
-			File[] files = dictonary.listFiles();
+			File[] files = dictionary.listFiles();
 			if (files.length < 1) {
 				System.out.println("Error: " + args[0] + "is empty");
 				System.exit(0);
@@ -36,7 +36,7 @@ public class ReadDictonary implements ICommand {
 				System.out.println(files[i].getName());
 			}
 		} else {
-			System.out.println("Invalid usage. Please use: -listDirContents [dictonary]");
+			System.out.println("Invalid usage. Please use: -listDirContents [dictionary]");
 			System.exit(0);
 		}
 	}

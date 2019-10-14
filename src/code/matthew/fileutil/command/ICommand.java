@@ -2,9 +2,9 @@ package code.matthew.fileutil.command;
 
 public interface ICommand {
 
-	public String getCommand();
+	String getCommand();
 
-	public String getUsage();
+	String getUsage();
 
-	public void processCommand(String[] args);
+	void processCommand(String[] args);
 }
