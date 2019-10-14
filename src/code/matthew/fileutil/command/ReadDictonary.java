@@ -10,7 +10,12 @@ public class ReadDictonary implements ICommand {
 	}
 
 	@Override
-	public void processComannd(String[] args) {
+	public String getUsage() {
+		return "-listDirContents [dictonary]";
+	}
+
+	@Override
+	public void processCommand(String[] args) {
 		if (args.length > 0 && args[0] != null) {
 			File dictonary = new File(args[0]);
 
@@ -20,8 +25,7 @@ public class ReadDictonary implements ICommand {
 			}
 
 			File[] files = dictonary.listFiles();
-
-			if (files.length < 0) {
+			if (files.length < 1) {
 				System.out.println("Error: " + args[0] + "is empty");
 				System.exit(0);
 			}

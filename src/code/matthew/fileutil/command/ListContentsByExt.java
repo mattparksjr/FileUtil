@@ -11,7 +11,12 @@ public class ListContentsByExt implements ICommand {
 	}
 
 	@Override
-	public void processComannd(String[] args) {
+	public String getUsage() {
+		return "-listContentsByExtension [dictonary] [extension]";
+	}
+
+	@Override
+	public void processCommand(String[] args) {
 		if (args.length > 0 && args[0] != null && args[1] != null) {
 			File f = new File(args[0]);
 

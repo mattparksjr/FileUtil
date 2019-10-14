@@ -10,7 +10,12 @@ public class GetFileSize implements ICommand {
 	}
 
 	@Override
-	public void processComannd(String[] args) {
+	public String getUsage() {
+		return "-getFileSize [file]";
+	}
+
+	@Override
+	public void processCommand(String[] args) {
 		if (args[0] != null) {
 
 			File f = new File(args[0]);
