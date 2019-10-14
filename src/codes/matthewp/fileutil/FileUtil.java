@@ -21,7 +21,7 @@ public class FileUtil {
         // possibleCommands.add("-listFileContents");
         possibleCommands.put(new GetFileSize().getCommand(), new GetFileSize());
         // possibleCommands.add("-contentsToByteArray");
-        // possibleCommands.add("-locateLongestWord");
+		possibleCommands.put(new FindLongestWord().getCommand(), new FindLongestWord());
         // possibleCommands.add("-readLines");
         // possibleCommands.add("-append");
         // possibleCommands.add("-readStoreToArray");

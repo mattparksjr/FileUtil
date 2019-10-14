@@ -32,6 +32,4 @@ public class CheckReadWrite implements ICommand {
 			System.exit(0);
 		}
 	}
-
-	
 }
