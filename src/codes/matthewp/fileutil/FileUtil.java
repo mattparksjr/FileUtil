@@ -12,9 +12,11 @@ public class FileUtil {
 
     public static void main(String[] args) {
         // Register commands
-        registerCommands(new ReadDictionary(), new ListContentsByExt(), new CheckReadWrite(), new IsValidDir(), new GetFileSize(), new FindLongestWord());
+        registerCommands(new ReadDictionary(), new ListContentsByExt(),
+                new CheckReadWrite(), new IsValidDir(),
+                new GetFileSize(), new FindLongestWord(),
+                new ModifTime());
         // possibleCommands.add("-compareLex");
-        // possibleCommands.add("-lastModificationTime");
         // possibleCommands.add("-listFileContents");
         // possibleCommands.add("-contentsToByteArray");
         // possibleCommands.add("-readLines");
@@ -55,7 +57,6 @@ public class FileUtil {
             System.out.println("    " + possibleCommands.get(s).getUsage());
         }
 //        System.out.println("    -compareLex [file] [file]");
-//        System.out.println("    -lastModificationTime [file]");
 //        System.out.println("    -listFileContents [dictionary]");
 //        System.out.println("    -contentsToByteArray [file]");
 //        System.out.println("    -readLines [file]");
@@ -65,7 +66,7 @@ public class FileUtil {
         Scanner userInput = new Scanner(System.in);
         while (true) {
             String input = userInput.nextLine();
-            if (!input.isEmpty()) {
+            if (! input.isEmpty()) {
                 String[] args = input.split(" ");
                 doArgProcess(args);
             }
