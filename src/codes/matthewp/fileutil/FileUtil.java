@@ -15,8 +15,7 @@ public class FileUtil {
         registerCommands(new ReadDictionary(), new ListContentsByExt(),
                 new CheckReadWrite(), new IsValidDir(),
                 new GetFileSize(), new FindLongestWord(),
-                new ModifTime());
-        // possibleCommands.add("-compareLex");
+                new ModifTime(), new CompareLex());
         // possibleCommands.add("-listFileContents");
         // possibleCommands.add("-contentsToByteArray");
         // possibleCommands.add("-readLines");
@@ -30,7 +29,7 @@ public class FileUtil {
         if (args.length > 0) {
             if (args[0].startsWith("-")) {
                 for (int i = 0; i < possibleCommands.size(); i++) {
-                    String[] strippedArgs = new String[args.length];
+                    String[] strippedArgs = new String[args.length - 1];
                     for (int j = 0; j < args.length; j++) {
                         if (j != 0) {
                             strippedArgs[j - 1] = args[j];
@@ -56,13 +55,6 @@ public class FileUtil {
         for (String s : possibleCommands.keySet()) {
             System.out.println("    " + possibleCommands.get(s).getUsage());
         }
-//        System.out.println("    -compareLex [file] [file]");
-//        System.out.println("    -listFileContents [dictionary]");
-//        System.out.println("    -contentsToByteArray [file]");
-//        System.out.println("    -readLines [file]");
-//        System.out.println("    -append [file] [textToBeAppended]");
-//        System.out.println("    -readStoreToArray [file] [echo?t/f]");
-//        System.out.println("    -readFile [file]");
         Scanner userInput = new Scanner(System.in);
         while (true) {
             String input = userInput.nextLine();
